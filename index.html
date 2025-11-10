@@ -15,7 +15,7 @@
   --text-muted: #94a3b8;
 }
 
-/* General Body */
+
 body {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -23,7 +23,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Navbar */
+
 nav.navbar {
   background-color: rgba(15, 23, 42, 0.95);
   backdrop-filter: blur(10px);
@@ -52,7 +52,6 @@ nav.navbar {
   width: 100%;
 }
 
-/* Hero Section */
 .hero {
   min-height: 100vh;
   display: flex;
@@ -146,7 +145,7 @@ nav.navbar {
   transform: scale(1.05);
 }
 
-/* About Me Section */
+
 .about {
   padding: 6rem 0;
   background: linear-gradient(180deg, #1e293b, #0f172a);
@@ -178,8 +177,6 @@ nav.navbar {
   line-height: 1.9;
   letter-spacing: 0.3px;
 }
-
-/* Skills Section */
 .skills {
   background-color: var(--bg-dark);
   color: var(--text-light);
@@ -205,7 +202,7 @@ nav.navbar {
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(6, 1fr); /* 6 per row */
+  grid-template-columns: repeat(6, 1fr); 
   gap: 2rem;
   justify-items: center;
   align-items: center;
@@ -235,24 +232,20 @@ nav.navbar {
 
 @media (max-width: 992px) {
   .skills-grid {
-    grid-template-columns: repeat(3, 1fr); /* 3 per row on tablets */
+    grid-template-columns: repeat(3, 1fr); 
   }
 }
 @media (max-width: 576px) {
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
+    grid-template-columns: repeat(2, 1fr); 
   }
 }
-
-/* Footer */
 footer {
   text-align: center;
   padding: 2rem 0;
   color: var(--text-muted);
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
-/* Projects Section */
-/* Projects Section */
 .projects {
   background: linear-gradient(180deg, #0f172a, #1e293b);
   color: var(--text-light);
@@ -332,7 +325,7 @@ footer {
   box-shadow: 0 0 20px rgba(0, 191, 166, 0.3);
 }
 
-/* Responsive Projects Grid */
+
 @media (max-width: 992px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -343,7 +336,6 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* Certifications Section */
 .certifications {
   background: linear-gradient(180deg, #1e293b, #0f172a);
   color: var(--text-light);
@@ -423,7 +415,6 @@ footer {
   box-shadow: 0 0 20px rgba(0, 191, 166, 0.3);
 }
 
-/* Responsive Certification Grid */
 @media (max-width: 992px) {
   .cert-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -434,7 +425,6 @@ footer {
     grid-template-columns: 1fr;
   }
 }
-/* Contact Section */
 .contact-section {
   background: linear-gradient(180deg, #0f172a, #1e293b);
   padding: 5rem 0;
@@ -550,7 +540,6 @@ footer {
     </div>
   </nav>
 
-  <!-- Hero Section -->
   <section id="home" class="hero">
     <div class="container">
       <div class="row align-items-center justify-content-between">
@@ -572,7 +561,6 @@ footer {
     </div>
   </section>
 
-  <!-- About Me Section -->
   <section class="about" id="about">
     <div class="container">
       <h2>About Me</h2>
@@ -586,14 +574,12 @@ footer {
       </p>
     </div>
   </section>
-  <!-- Skills Section -->
-<!-- Skills Section -->
-<!-- Skills Section -->
+
 <section class="skills py-5" id="skills">
   <div class="container text-center">
     <h2>Skills</h2>
     <div class="skills-grid mt-4">
-      <!-- Row 1 -->
+      
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><p>C</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><p>C++</p></div>
@@ -601,7 +587,7 @@ footer {
       <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI"><p>Power BI</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><p>SQL</p></div>
 
-      <!-- Row 2 -->
+      
       <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg" alt="Excel"><p>Excel</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
@@ -609,20 +595,18 @@ footer {
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js"><p>React.js</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><p>Bootstrap</p></div>
 
-      <!-- Row 3 -->
+      
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><p>PHP</p></div>
       <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><p>Figma</p></div>
     </div>
   </div>
 </section>
-<!-- Projects Section -->
-<!-- Projects Section -->
 <section class="projects py-5" id="projects">
   <div class="container text-center">
     <h2>Projects</h2>
     <div class="projects-grid mt-4">
 
-      <!-- Project 1 -->
+      
       <div class="project-card">
         <h5>Product Dashboard</h5>
         <p>
@@ -631,7 +615,7 @@ footer {
         <a href="https://github.com/benarji-409/product-dashboard.git" class="btn-project" target="_blank">View Project</a>
       </div>
 
-      <!-- Project 2 -->
+     
       <div class="project-card">
         <h5>Online Examination Portal</h5>
         <p>
@@ -640,7 +624,7 @@ footer {
         <a href="https://github.com/benarji-409/online-examination-portal/" class="btn-project" target="_blank">View Project</a>
       </div>
 
-      <!-- Project 3 -->
+      
       <div class="project-card">
         <h5>Mobile Phone Website</h5>
         <p>
@@ -652,13 +636,12 @@ footer {
     </div>
   </div>
 </section>
-<!-- Certifications & Internships Section -->
+
 <section class="certifications py-5" id="certifications">
   <div class="container text-center">
     <h2>Certifications & Internships</h2>
     <div class="cert-grid mt-4">
 
-      <!-- Internship -->
       <div class="cert-card">
         <h5>Power BI Internship – Cognifyz Technologies</h5>
         <p>
@@ -667,7 +650,6 @@ footer {
         <a href="internship.png" class="btn-cert" target="_blank">View Certificate</a>
       </div>
 
-      <!-- Certificate 1 -->
       <div class="cert-card">
         <h5>Data Analytics Certification</h5>
         <p>
@@ -676,7 +658,6 @@ footer {
         <a href="dataanalytics.pdf" class="btn-cert" target="_blank">View Certificate</a>
       </div>
 
-      <!-- Certificate 2 -->
       <div class="cert-card">
         <h5>30 Days Data Analytics MasterClass – NoviTech R&D Pvt. Ltd.</h5>
         <p>
@@ -685,7 +666,6 @@ footer {
         <a href="30daysdataanalytics.pdf" class="btn-cert" target="_blank">View Certificate</a>
       </div>
 
-      <!-- Certificate 3 -->
       <div class="cert-card">
         <h5>NPTEL Python for Data Science – IIT Madras</h5>
         <p>
@@ -694,7 +674,6 @@ footer {
         <a href="nptelpythonfordatascience.jpg" class="btn-cert" target="_blank">View Certificate</a>
       </div>
 
-      <!-- Certificate 4 -->
       <div class="cert-card">
         <h5>Power BI Workshop – OfficeMaster</h5>
         <p>
@@ -703,7 +682,6 @@ footer {
         <a href="powerbiworkshopcertificate.jpg" class="btn-cert" target="_blank">View Certificate</a>
       </div>
 
-      <!-- Certificate 5 -->
       <div class="cert-card">
         <h5>Techkriti ML Hackathon – IIT Kanpur</h5>
         <p>
@@ -715,14 +693,13 @@ footer {
     </div>
   </div>
 </section>
-<!-- Contact Section -->
-<!-- Contact Section -->
+
 <section class="contact-section py-5" id="contact">
   <div class="container">
     <h2 class="contact-title text-center">Get in Touch</h2>
     <div class="row g-4 align-items-start mt-4">
       
-      <!-- Contact Info (Left Side) -->
+    
       <div class="col-md-6 contact-info">
         <h5>My Details</h5>
         <p><i class="bi bi-person-circle"></i> <strong>Name:</strong> Inkuri Benarji Kumar</p>
@@ -736,7 +713,6 @@ footer {
         </div>
       </div>
 
-      <!-- Contact Form (Right Side) -->
       <div class="col-md-6">
         <form action="https://formsubmit.co/benarjikumarinkuri@gmail.com" method="POST" class="contact-form">
           <input type="hidden" name="_captcha" value="false">
@@ -758,7 +734,6 @@ footer {
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script>
-    // Text rotation for roles
     const roles = ["Full Stack Developer", "UI/UX Designer", "Data Analyst"];
     let i = 0;
     const textElement = document.querySelector('.changing-text');
@@ -776,3 +751,4 @@ footer {
   </script>
 </body>
 </html>
+
