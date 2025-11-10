@@ -1,0 +1,778 @@
+<!doctype html>
+<html lang="en">
+>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Benarji Kumar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+  --accent: #00bfa6;
+  --bg-dark: #0f172a;
+  --text-light: #e2e8f0;
+  --text-muted: #94a3b8;
+}
+
+/* General Body */
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Navbar */
+nav.navbar {
+  background-color: rgba(15, 23, 42, 0.95);
+  backdrop-filter: blur(10px);
+}
+.navbar-brand {
+  font-weight: 700;
+  color: var(--accent) !important;
+  letter-spacing: 1px;
+}
+.nav-link {
+  color: var(--text-light) !important;
+  margin-right: 1rem;
+  position: relative;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: var(--accent);
+  transition: 0.3s;
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Hero Section */
+.hero {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5rem 0;
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  overflow: hidden;
+}
+.hero-img img {
+  width: 340px;
+  border-radius: 25px;
+  border: 3px solid var(--accent);
+  box-shadow: 0 0 25px rgba(0, 191, 166, 0.3);
+  animation: float 4s ease-in-out infinite, fadeUp 1.2s ease-out;
+  object-fit: cover;
+}
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.hero-text {
+  animation: fadeUp 1.5s ease-out;
+  text-align: left;
+}
+.hero-text h1 {
+  font-size: 2.6rem;
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+}
+.changing-text {
+  color: var(--accent);
+  font-weight: 700;
+}
+.fade {
+  animation: fadeInOut 2s infinite;
+}
+@keyframes fadeInOut {
+  0%, 100% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+.hero-text p {
+  color: var(--text-light);
+  margin-top: 10px;
+  max-width: 600px;
+}
+
+.social-icons, .btn-resume {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSequence 1s ease forwards;
+}
+
+.social-icons { animation-delay: 0.5s; }
+.btn-resume { animation-delay: 0.8s; }
+
+@keyframes fadeSequence {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.social-icons a {
+  color: var(--text-light);
+  font-size: 1.8rem;
+  margin: 0 25px 0 0;
+  transition: 0.3s;
+}
+.social-icons a:hover {
+  color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.btn-resume {
+  background-color: var(--accent);
+  color: #fff;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  transition: 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  margin-top: 20px;
+}
+.btn-resume:hover {
+  background-color: #02a78f;
+  transform: scale(1.05);
+}
+
+/* About Me Section */
+.about {
+  padding: 6rem 0;
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  text-align: center;
+  animation: fadeUp 1.5s ease-out;
+}
+.about h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+  position: relative;
+}
+.about h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+.about p {
+  max-width: 850px;
+  margin: 0 auto;
+  font-size: 1.2rem;
+  color: var(--text-light);
+  line-height: 1.9;
+  letter-spacing: 0.3px;
+}
+
+/* Skills Section */
+.skills {
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  text-align: center;
+  padding: 5rem 0;
+}
+.skills h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+.skills h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr); /* 6 per row */
+  gap: 2rem;
+  justify-items: center;
+  align-items: center;
+}
+.skill {
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.skill img {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+.skill p {
+  margin-top: 10px;
+  font-size: 1rem;
+  color: var(--text-light);
+}
+.skill:hover img {
+  transform: scale(1.15);
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+.skill:hover p {
+  color: var(--accent);
+}
+
+@media (max-width: 992px) {
+  .skills-grid {
+    grid-template-columns: repeat(3, 1fr); /* 3 per row on tablets */
+  }
+}
+@media (max-width: 576px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr); /* 2 per row on phones */
+  }
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 2rem 0;
+  color: var(--text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+/* Projects Section */
+/* Projects Section */
+.projects {
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  color: var(--text-light);
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.projects h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.projects h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.project-card {
+  background-color: #1e293b;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: left;
+  color: var(--text-light);
+  box-shadow: 0 0 15px rgba(0, 191, 166, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 360px;
+}
+
+.project-card h5 {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.btn-project {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.btn-project:hover {
+  background-color: #02a78f;
+  transform: scale(1.05);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 191, 166, 0.3);
+}
+
+/* Responsive Projects Grid */
+@media (max-width: 992px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Certifications Section */
+.certifications {
+  background: linear-gradient(180deg, #1e293b, #0f172a);
+  color: var(--text-light);
+  text-align: center;
+  padding: 5rem 0;
+}
+
+.certifications h2 {
+  font-size: 2rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.certifications h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.cert-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  justify-items: center;
+}
+
+.cert-card {
+  background-color: #1e293b;
+  border-radius: 15px;
+  padding: 2rem;
+  text-align: left;
+  color: var(--text-light);
+  box-shadow: 0 0 15px rgba(0, 191, 166, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 360px;
+}
+
+.cert-card h5 {
+  color: var(--accent);
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-bottom: 0.6rem;
+}
+
+.cert-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  margin-bottom: 1.2rem;
+  line-height: 1.6;
+}
+
+.btn-cert {
+  display: inline-block;
+  background-color: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 18px;
+  border-radius: 6px;
+  font-size: 0.95rem;
+  transition: 0.3s;
+}
+
+.btn-cert:hover {
+  background-color: #02a78f;
+  transform: scale(1.05);
+}
+
+.cert-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(0, 191, 166, 0.3);
+}
+
+/* Responsive Certification Grid */
+@media (max-width: 992px) {
+  .cert-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 576px) {
+  .cert-grid {
+    grid-template-columns: 1fr;
+  }
+}
+/* Contact Section */
+.contact-section {
+  background: linear-gradient(180deg, #0f172a, #1e293b);
+  padding: 5rem 0;
+  color: var(--text-light);
+}
+
+.contact-title {
+  color: var(--accent);
+  font-size: 2rem;
+  letter-spacing: 1px;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.contact-title::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent);
+  margin: 10px auto 0;
+  border-radius: 2px;
+}
+
+.contact-form {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(0, 191, 166, 0.15);
+}
+
+.contact-form input,
+.contact-form textarea {
+  background-color: transparent;
+  border: 1px solid var(--text-muted);
+  color: var(--text-light);
+  border-radius: 8px;
+  padding: 0.8rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  transition: 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent);
+  outline: none;
+  box-shadow: 0 0 8px rgba(0, 191, 166, 0.3);
+}
+
+.contact-form button {
+  background-color: var(--accent);
+  border: none;
+  padding: 10px 24px;
+  color: white;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #02a78f;
+  transform: scale(1.05);
+}
+
+.contact-info {
+  background-color: #1e293b;
+  padding: 2rem;
+  border-radius: 15px;
+  color: var(--text-light);
+  box-shadow: 0 0 20px rgba(0, 191, 166, 0.15);
+}
+
+.contact-info h5 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.contact-info p {
+  margin-bottom: 0.8rem;
+  color: var(--text-light);
+}
+
+.contact-info i {
+  color: var(--accent);
+  margin-right: 10px;
+}
+
+.contact-info a {
+  color: var(--text-light);
+  transition: 0.3s;
+}
+
+.contact-info a:hover {
+  color: var(--accent);
+}
+
+
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Benarji Kumar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link active" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container">
+      <div class="row align-items-center justify-content-between">
+        <div class="col-lg-5 mb-4 mb-lg-0 hero-img text-center">
+          <img src="image 1.jpg" alt="Benarji Kumar">
+        </div>
+        <div class="col-lg-6 hero-text">
+          <h1>Hi, I'm <span class="changing-text"></span></h1>
+          <p>Hi, I’m Benarji Kumar, a passionate Computer Science and Engineering (Data Science) student.</p>
+          <div class="social-icons mt-3 mb-2">
+            <a href="mailto:benarjikumarinkuri@gmail.com" target="_blank" aria-label="Email"><i class="bi bi-envelope-fill"></i></a>
+            <a href="https://www.instagram.com/benarjibunnyinkuri" target="_blank" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/benarjikumar-inkuri-4029a5355" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            <a href="https://github.com/benarji-409" target="_blank" aria-label="GitHub"><i class="bi bi-github"></i></a>
+          </div>
+          <a href="my resume.pdf" class="btn-resume" download>Resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Me Section -->
+  <section class="about" id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>
+        Hi, I’m <strong>Inkuri Benarji Kumar</strong>, a Computer Science and Engineering (Data Science) student 
+        at <strong>Aditya Institute of Technology and Management</strong>. 
+        I love learning about new technologies and building creative, useful projects. 
+        I’m interested in web development, UI/UX design, and data analysis.  
+        I always try to learn something new, improve my skills, and create simple, smart solutions 
+        that make life easier. My goal is to grow into a skilled professional who can turn ideas into real results.
+      </p>
+    </div>
+  </section>
+  <!-- Skills Section -->
+<!-- Skills Section -->
+<!-- Skills Section -->
+<section class="skills py-5" id="skills">
+  <div class="container text-center">
+    <h2>Skills</h2>
+    <div class="skills-grid mt-4">
+      <!-- Row 1 -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"><p>Python</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/c/c-original.svg" alt="C"><p>C</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"><p>C++</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" alt="R Language"><p>R Language</p></div>
+      <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/c/cf/New_Power_BI_Logo.svg" alt="Power BI"><p>Power BI</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="SQL"><p>SQL</p></div>
+
+      <!-- Row 2 -->
+      <div class="skill"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Microsoft_Excel_2013-2019_logo.svg" alt="Excel"><p>Excel</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML"><p>HTML</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS"><p>CSS</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"><p>JavaScript</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React.js"><p>React.js</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap"><p>Bootstrap</p></div>
+
+      <!-- Row 3 -->
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"><p>PHP</p></div>
+      <div class="skill"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg" alt="Figma"><p>Figma</p></div>
+    </div>
+  </div>
+</section>
+<!-- Projects Section -->
+<!-- Projects Section -->
+<section class="projects py-5" id="projects">
+  <div class="container text-center">
+    <h2>Projects</h2>
+    <div class="projects-grid mt-4">
+
+      <!-- Project 1 -->
+      <div class="project-card">
+        <h5>Product Dashboard</h5>
+        <p>
+          A data-driven product dashboard built to visualize sales, customer insights, and product performance efficiently using clean UI and analytics features.
+        </p>
+        <a href="https://github.com/benarji-409/product-dashboard.git" class="btn-project" target="_blank">View Project</a>
+      </div>
+
+      <!-- Project 2 -->
+      <div class="project-card">
+        <h5>Online Examination Portal</h5>
+        <p>
+          A web-based examination portal designed for secure online tests, including student login, question management, and automatic result generation.
+        </p>
+        <a href="https://github.com/benarji-409/online-examination-portal/" class="btn-project" target="_blank">View Project</a>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <h5>Mobile Phone Website</h5>
+        <p>
+          A responsive mobile phone showcase website featuring smooth navigation, interactive product display, and modern UI/UX elements.
+        </p>
+        <a href="https://benarji-409.github.io/mobile-phone/index.html" class="btn-project" target="_blank">View Project</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Certifications & Internships Section -->
+<section class="certifications py-5" id="certifications">
+  <div class="container text-center">
+    <h2>Certifications & Internships</h2>
+    <div class="cert-grid mt-4">
+
+      <!-- Internship -->
+      <div class="cert-card">
+        <h5>Power BI Internship – Cognifyz Technologies</h5>
+        <p>
+          Completed a one-month internship at Cognifyz Technologies, focusing on Power BI dashboards, data analytics, and business visualization.
+        </p>
+        <a href="internship.png" class="btn-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- Certificate 1 -->
+      <div class="cert-card">
+        <h5>Data Analytics Certification</h5>
+        <p>
+          Completed a data analytics course focused on practical data visualization, dashboards, and real-time analytical insights.
+        </p>
+        <a href="dataanalytics.pdf" class="btn-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- Certificate 2 -->
+      <div class="cert-card">
+        <h5>30 Days Data Analytics MasterClass – NoviTech R&D Pvt. Ltd.</h5>
+        <p>
+          Completed an intensive 30-day masterclass covering Power BI, Excel, and essential data analysis techniques.
+        </p>
+        <a href="30daysdataanalytics.pdf" class="btn-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- Certificate 3 -->
+      <div class="cert-card">
+        <h5>NPTEL Python for Data Science – IIT Madras</h5>
+        <p>
+          Successfully completed a four-week NPTEL online course on Python for Data Science, covering programming, data handling, and visualization.
+        </p>
+        <a href="nptelpythonfordatascience.jpg" class="btn-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- Certificate 4 -->
+      <div class="cert-card">
+        <h5>Power BI Workshop – OfficeMaster</h5>
+        <p>
+          Participated in an advanced Power BI workshop and learned to create AI-powered interactive dashboards within 30 minutes.
+        </p>
+        <a href="powerbiworkshopcertificate.jpg" class="btn-cert" target="_blank">View Certificate</a>
+      </div>
+
+      <!-- Certificate 5 -->
+      <div class="cert-card">
+        <h5>Techkriti ML Hackathon – IIT Kanpur</h5>
+        <p>
+          Participated in the ML Hackathon at Techkriti’25, the annual technical and entrepreneurial festival of IIT Kanpur.
+        </p>
+        <a href="techkriti.jpg" class="btn-cert" target="_blank">View Certificate</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+<!-- Contact Section -->
+<!-- Contact Section -->
+<section class="contact-section py-5" id="contact">
+  <div class="container">
+    <h2 class="contact-title text-center">Get in Touch</h2>
+    <div class="row g-4 align-items-start mt-4">
+      
+      <!-- Contact Info (Left Side) -->
+      <div class="col-md-6 contact-info">
+        <h5>My Details</h5>
+        <p><i class="bi bi-person-circle"></i> <strong>Name:</strong> Inkuri Benarji Kumar</p>
+        <p><i class="bi bi-geo-alt"></i> <strong>Address:</strong> Salur, Andhra Pradesh</p>
+        <p><i class="bi bi-envelope-fill"></i> <strong>Email:</strong> <a href="mailto:benarjikumarinkuri@gmail.com">benarjikumarinkuri@gmail.com</a></p>
+        <p><i class="bi bi-phone-fill"></i> <strong>Phone:</strong> +91 7569379979</p>
+        <div class="mt-3">
+          <a href="https://www.instagram.com/benarjibunnyinkuri" target="_blank" aria-label="Instagram"><i class="bi bi-instagram fs-4 me-3"></i></a>
+          <a href="https://www.linkedin.com/in/benarjikumar-inkuri-4029a5355" target="_blank" aria-label="LinkedIn"><i class="bi bi-linkedin fs-4 me-3"></i></a>
+          <a href="https://github.com/benarji-409" target="_blank" aria-label="GitHub"><i class="bi bi-github fs-4 me-3"></i></a>
+        </div>
+      </div>
+
+      <!-- Contact Form (Right Side) -->
+      <div class="col-md-6">
+        <form action="https://formsubmit.co/benarjikumarinkuri@gmail.com" method="POST" class="contact-form">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_subject" value="New Contact Message from Portfolio">
+
+          <input type="text" name="name" placeholder="Your Name" required>
+          <input type="email" name="email" placeholder="Your Email" required>
+          <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+          <button type="submit">Send Message</button>
+        </form>
+      </div>
+
+    </div>
+  </div>
+</section>
+  <footer>
+    <p>© <span id="year"></span> Benarji Kumar — All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Text rotation for roles
+    const roles = ["Full Stack Developer", "UI/UX Designer", "Data Analyst"];
+    let i = 0;
+    const textElement = document.querySelector('.changing-text');
+    function changeText() {
+      textElement.textContent = roles[i];
+      textElement.classList.remove('fade');
+      void textElement.offsetWidth;
+      textElement.classList.add('fade');
+      i = (i + 1) % roles.length;
+    }
+    changeText();
+    setInterval(changeText, 2000);
+
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

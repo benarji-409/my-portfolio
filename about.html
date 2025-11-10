@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>About Me — Benarji Kumar</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    :root {
+      --accent: #00bfa6;
+      --bg-dark: #0f172a;
+      --text-light: #e2e8f0;
+      --card-bg: #f8fafc;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+    }
+
+    nav.navbar {
+      background-color: rgba(15, 23, 42, 0.95);
+      backdrop-filter: blur(10px);
+    }
+    .navbar-brand {
+      font-weight: 700;
+      color: var(--accent) !important;
+      letter-spacing: 1px;
+    }
+    .nav-link {
+      color: var(--text-light) !important;
+      margin-right: 1rem;
+      position: relative;
+    }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0%;
+      height: 2px;
+      background-color: var(--accent);
+      transition: 0.3s;
+    }
+    .nav-link:hover::after {
+      width: 100%;
+    }
+
+    /* About Section */
+    .about-section {
+      padding: 8rem 0 4rem; /* top padding */
+      text-align: center;
+    }
+
+    .about-section h1 {
+      font-size: 2.5rem;
+      letter-spacing: 2px;
+      margin-bottom: 3rem;
+      color: var(--text-light);
+    }
+
+    .row-gap {
+      row-gap: 2.5rem;
+      column-gap: 2.5rem; /* space between cards */
+    }
+
+    .card-box {
+      background-color: var(--card-bg);
+      color: #000;
+      border-radius: 12px;
+      padding: 1.8rem;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+      animation: fadeUp 1s ease forwards;
+      flex: 1;
+    }
+    .card-box:nth-child(1) { animation-delay: 0.2s; }
+    .card-box:nth-child(2) { animation-delay: 0.4s; }
+    .card-box:nth-child(3) { animation-delay: 0.6s; }
+
+    .card-box:hover {
+      transform: scale(1.03);
+      box-shadow: 0 4px 20px rgba(0, 191, 166, 0.3);
+    }
+
+    .card-box h5 {
+      font-weight: 600;
+      font-size: 1.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .date-label {
+      background-color: #000;
+      color: #fff;
+      display: inline-block;
+      padding: 0.3rem 0.8rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (min-width: 992px) {
+      .card-box {
+        min-height: 230px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="index.html">Benarji Kumar</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link active" href="about.html">About Me</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section class="about-section">
+    <div class="container">
+      <h1>ABOUT ME</h1>
+      <div class="row justify-content-center row-gap">
+        <div class="col-md-5 card-box">
+          <span class="date-label">2023 - present</span>
+          <h5>B.Tech (CSD)</h5>
+          <p>
+            I am currently pursuing my B.Tech in Computer Science and Engineering (Data Science) at Aditya Institute of Technology and Management.
+            This program is helping me strengthen my technical knowledge and practical skills in software development.
+          </p>
+        </div>
+
+        <div class="col-md-5 card-box">
+          <span class="date-label">2021 - 2023</span>
+          <h5>Intermediate (MPC)</h5>
+          <p>
+            I completed my intermediate education at Sri Chaitanya College in Visakhapatnam.
+            My time there helped me strengthen my academic skills and deepen my interest in Computer Science.
+          </p>
+        </div>
+
+        <div class="col-md-5 card-box">
+          <span class="date-label">2020 - 2021</span>
+          <h5>Schooling (10th)</h5>
+          <p>
+            I completed my schooling at Bhashyam Educational Institutions in Salur, where I built a strong academic foundation.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
